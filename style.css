@@ -239,7 +239,7 @@ footer{
   .nav.desktop{ display:none; }
   .menuBtn{ display:block; }
   .brand{ width: 170px; }
-  .brand img{ height: 52px; }
+  .brand img{ height: 90px; }
   .hero{ background-attachment: scroll; } /* mobile perf */
 }
 
