@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loja Deathgolden</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="index.html" aria-label="Deathgolden - Início">
+      <img src="img/logo.png" alt="Deathgolden">
+    </a>
+
+    <nav class="nav desktop">
+      <a class="navlink" href="index.html">Início</a>
+      <a class="navlink active" href="loja.html">Loja</a>
+      <a class="navlink" href="admin.html">Admin</a>
+    </nav>
+
+    <button class="menuBtn" type="button" data-menu-btn aria-expanded="false" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="nav mobile" data-menu-panel>
+    <a class="navlink" href="index.html">Início</a>
+    <a class="navlink active" href="loja.html">Loja</a>
+    <a class="navlink" href="admin.html">Admin</a>
+  </nav>
+</header>
+<div class="spacer"></div>
+
+<h2>Loja Oficial</h2>
+<div id="produtos" class="grid"></div>
+
+<script>
+const container = document.getElementById("produtos");
+const produtos = JSON.parse(localStorage.getItem("produtos") || "[]");
+
+if(produtos.length === 0){
+  container.innerHTML = "<p>Nenhum produto cadastrado.</p>";
+}
+
+produtos.forEach(p=>{
+  container.innerHTML += `
+    <div class="card">
+      <img src="${p.img}">
+      <h3>${p.nome}</h3>
+      <p>R$ ${p.preco}</p>
+    </div>
+  `
+})
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>

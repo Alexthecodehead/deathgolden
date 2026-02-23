@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Área Privada</h2>
+
+<div id="loginBox">
+  <input type="text" id="user" placeholder="Usuário">
+  <input type="password" id="pass" placeholder="Senha">
+  <button onclick="login()">Entrar</button>
+</div>
+
+<div id="painel" style="display:none">
+  <h3>Novo Produto</h3>
+  <input id="nome" placeholder="Nome">
+  <input id="preco" placeholder="Preço">
+  <input id="img" placeholder="URL da imagem">
+  <button onclick="add()">Salvar</button>
+</div>
+
+<script>
+function login(){
+  if(user.value==="Deathmaster" && pass.value==="Death@2025"){
+    document.getElementById("loginBox").style.display="none";
+    document.getElementById("painel").style.display="block";
+  } else alert("Login inválido");
+}
+
+function add(){
+  let produtos = JSON.parse(localStorage.getItem("produtos")||"[]");
+  produtos.push({
+    nome: nome.value,
+    preco: preco.value,
+    img: img.value
+  });
+  localStorage.setItem("produtos", JSON.stringify(produtos));
+  alert("Produto salvo!");
+}
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
