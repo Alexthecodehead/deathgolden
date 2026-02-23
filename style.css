@@ -54,7 +54,7 @@ body{
   align-items:center;
   justify-content:flex-start;
   width: 520px;         /* left block like Slipknot */
-  transform-origin: left center;
+  transform-origin: left;
   will-change: transform;
   transition: transform .05s linear;
   text-decoration:none;
