@@ -238,8 +238,8 @@ footer{
 @media (max-width: 820px){
   .nav.desktop{ display:none; }
   .menuBtn{ display:block; }
-  .brand{ width: 170px; }
-  .brand img{ height: 90px; }
+  .brand{ width: 220px; }
+  .brand img{ height: 190px; }
   .hero{ background-attachment: scroll; } /* mobile perf */
 }
 
